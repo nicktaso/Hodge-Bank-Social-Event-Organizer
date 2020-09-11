@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>My Events</title>
+    <th:block th:replace="fragments/metaFragment :: metaFragment"></th:block>
+    <link rel="stylesheet" href="../css/myEvents.css">
+</head>
+
+<body>
+
+    <section th:replace="fragments/loginFragment :: loginFragment"></section>
+    <main id="logged-in" style="display:none;">
+        <header th:replace="fragments/headerFooterFragment :: headerFragment"></header>
+        <!-- this to be replaced with new header fragment -->
+        <section id="header-section">
+        </section>
+
+        <section id="user-details">
+            <div class="user-details">
+                <p><span><i class="fa fa-user"></i></span></p>
+            </div>
+        </section>
+
+        <section id="upcoming-events-carousel">
+        </section>
+
+        <section id="pending-events-carousel">
+        </section>
+
+        <section id="owning-events-carousel">
+        </section>
+
+        <section id="previous-events-carousel">
+        </section>
+
+    </main>
+
+    <th:block th:replace="fragments/generalScriptFragment :: generalScriptFragment"></th:block>
+
+    <script src="../javascript/myEvents.js"></script>
+
+</body>
+
+</html>

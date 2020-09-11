@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calendar</title>
+    <th:block th:replace="fragments/metaFragment :: metaFragment"></th:block>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../css/calendar.css">
+</head>
+<body>
+        <section th:replace="fragments/loginFragment :: loginFragment"></section>
+
+        <main id="logged-in">
+                <header th:replace="fragments/headerFooterFragment :: headerFragment"></header>
+
+                <section>
+                        <div class="calendar disable-selection" id="calendar">
+                                <div class="left-side">
+                                        <div class="current-day text-center">
+                                                <h1 class="calendar-left-side-day" id="selected-day"></h1>
+                                                <div class="calendar-left-side-day-of-week" id="selected-day-of-week"></div>
+                                        </div>
+                                        <div class="current-day-events">
+                                                <div class="current-day-events-list "></div>
+                                        </div>
+                                </div>
+
+                                <div class="right-side">
+                                        <div class="text-left calendar-change-view">
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                        <label class="btn btn-secondary btn-sm active" name="all-events">
+                                                                <input type="radio"  checked> All Events
+                                                        </label>
+                                                        <label class="btn btn-secondary btn-sm" name="my-events">
+                                                                <input type="radio"  > My Events
+                                                        </label>
+                                                </div>
+                                        </div>
+                                        <div class="text-right calendar-change-year">
+                                                <div>
+                                                        <span class="fa fa-caret-left cursor-pointer" id="year-prev"></span>
+                                                        <span id="year"></span>
+                                                        <span class="fa fa-caret-right cursor-pointer" id="year-next"></span>
+                                                </div>
+                                        </div>
+
+                                        <div class="calendar-month-list">
+                                                <ul class="calendar-month"></ul>
+                                        </div>
+
+                                        <div class="calendar-week-list">
+                                                <ul class="calendar-week"></ul>
+                                        </div>
+
+                                        <div class="calendar-day-list">
+                                                <ul class="calendar-days"></ul>
+                                        </div>
+                                </div>
+                        </div>
+                </section>      
+        </main>
+
+        <th:block th:replace="fragments/generalScriptFragment :: generalScriptFragment"></th:block>
+        <script src="../javascript/calendar.js"></script>
+</body>
+</html>

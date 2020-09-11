@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragments/metaFragment :: metaFragment"></th:block>
+    <title>Event</title>
+    <link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+
+<section th:replace="fragments/loginFragment :: loginFragment" class="bg-image"></section>
+<!-- Header -->
+
+<section id="logged-in" style="display:none;">
+    <header th:replace="fragments/headerFooterFragment :: headerFragment"></header>
+    <main>
+        <!-- Image Layout -->
+        <div class="row bg-faded mr-0">
+            <div class="imageLayout text-center">
+                <img id="eventCoverImage" src="" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+
+        <div class="centerBar text-center">
+            <div>
+                <button type="button" onclick="showInvitedUsers()" class=" invButtonsCenter btn btn-primary btn-sm m-1"> <span id="mobile-number-invited-users"></span> Invited <i class="fa fa-envelope-o"></i> </button>
+                <button type="button" onclick="showGoingUsers()" class=" invButtonsCenter btn btn-secondary btn-sm m-1"> <span id="mobile-number-going-users"></span> Going <i class="fa fa-check"></i> </button>
+                <button type="button" onclick="showNotGoingUsers()" class=" invButtonsCenter btn btn-primary btn-sm m-1" > <span id="mobile-number-not-going-users"></span> Not Going <i class="fa fa-remove"></i> </button>
+            </div>
+
+            <!-- Center bar -->
+            <ul class=" nav nav-pills nav-fill" >
+                <li class= " col-md-4 nav-item">
+                    <a id="event-location" class="nav-link" href="#">Location</a>
+                </li>
+                <li class=" col-md-4 nav-item" style= "font-size: 1.60rem; font-weight: 600;">
+                    <a  id="event-date" class="nav-link" href="#">Date</a>
+                </li>
+                <li class=" col-md-4 nav-item" style= "font-size: 1.60rem; font-weight: 600;">
+                    <a id="event-time" class="nav-link" href="#">Time</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Desciption and Information -->
+        <div class="description row">
+            <div class="col-md-6">
+                <h3 id="event-title" class="display-4"></h3>
+                <p  id="event-description">
+                </p>
+            </div>
+            <div id="map" class="col-md-5">
+                <h2>Google map</h2>
+            </div>
+        </div>
+
+
+        <section id="invite-modal-section">
+            <div class="modal fade" id="invite-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Invite</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="invitation-modal-body">
+                            <p id="invite-modal-error"></p>
+                            <div id="invite-alert-error" class="alert alert-danger" role="alert" style="display:none;">
+                                <p id="invite-alert-error-p"></p>
+                            </div>
+                            <div id="invite-alert-wait" class="alert alert-warning" role="alert" style="display:none;">
+                                <p id="invite-alert-wait-p">Sending...</p>
+                            </div>
+                            <div id="invite-alert-success" class="alert alert-success" role="alert" style="display:none;">
+                                <p id="invite-alert-success-p"></p>
+                            </div>
+                            <form id="invite-form" autocomplete="off" onsubmit="">
+                                <label class="col-form-label">Emails of people to invite:</label>
+                                <div class="autocomplete">
+                                    <textarea class="form-control" form="invite-form" id="multiple-email" text="" val=""></textarea>
+                                </div>
+                            </form>
+                            <label>Copy link: <a id="event-url-copy" href="" text=""></a></label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onClick="invite()">Invite</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team-modal-section">
+            <div class="modal fade" id="team-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create Team</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="team-modal-body">
+                            <p id="team-modal-error"></p>
+                            <div id="team-alert-error" class="alert alert-danger" role="alert" style="display:none;">
+                                <p id="team-alert-error-p"></p>
+                            </div>
+                            <div id="team-alert-wait" class="alert alert-warning" role="alert" style="display:none;">
+                                <p id="team-alert-wait-p">Creating Team...</p>
+                            </div>
+                            <div id="team-alert-success" class="alert alert-success" role="alert" style="display:none;">
+                                <p id="team-alert-success-p"></p>
+                            </div>
+                            <form id="team-form" autocomplete="off" onsubmit="">
+                                <label class="col-form-label">Team name:</label>
+                                <input type="text" class="form-control" id="team-name">
+                                <label class="col-form-label">Emails of people to add to the team:</label>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onClick="teamGoing()">Join</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="attendance-modal-section">
+            <div class="modal fade" id="attendance-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="attendance-modal-title"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                </tr>
+                                </thead>
+                                <tbody id="attendance-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style= "background: #223b47; padding:2px; overflow-x:hidden; position: sticky; bottom: 0;">
+        <div class="row text-center">
+            <div class="clickButtons col-md-4" style= "font-size: 1.60rem; font-weight: 600;">
+                <button onclick="showInviteModal()" style= "margin-right: 40px; background: none; color: #ffff; border: none; padding: 0;font: inherit; cursor: pointer; outline: inherit;">Invite</button>
+                <button id="going-button" onclick="userGoing()" style= "margin-right: 40px; background: none; color: #ffcb05; border: none; padding: 0;	font: inherit; cursor: pointer; outline: inherit;">Going</button>
+                <button id="not-going-button" onclick="userNotGoing()" style= "margin-right: 40px; background: none; color: #ffcb05; border: none; padding: 0;	font: inherit; cursor: pointer; outline: inherit;">Not Going</button>
+            </div>
+
+            <div class="modifyButtons col-md-4">
+                <a id="modify-button" onclick="setToModify()" href="/create-event" class="btn btn-primary btn-lg p-1" style= "background-color: #ffcb05; border-color: #ffcb05; color:#223b47; display:none;">Modify</a>
+                <a id="delete-button" onclick="deleteEvent()" class="btn btn-secondary btn-lg p-1"style= "background-color: #e20f0fd6; border-color: #e20f0fd6; color:#fff; display:none;">Delete</a>
+            </div>
+
+            <div class="invButtons col-md-4">
+                <button type="button" onclick="showInvitedUsers()" class="btn btn-primary btn-sm m-1" style= "background-color: #ffcb05; border-color: #ffcb05; color:#000000;"> <span id="number-invited-users"></span> Invited <i class="fa fa-envelope-o"></i> </button>
+                <button type="button" onclick="showGoingUsers()" class="btn btn-secondary btn-sm m-1"style= "background-color: #ffcb05; border-color: #ffcb05; color:#000000;"> <span id="number-going-users"></span> Going <i class="fa fa-check"></i> </button>
+                <button type="button" onclick="showNotGoingUsers()" class="btn btn-primary btn-sm m-1" style= "background-color: #ffcb05; border-color: #ffcb05; color:#000000;"> <span id="number-not-going-users"></span> Not Going <i class="fa fa-remove"></i> </button>
+            </div>
+        </div>
+    </footer>
+</section>
+<script th:inline="javascript">
+    var eventId = [[${eventId}]];
+</script>
+<th:block th:replace="fragments/generalScriptFragment :: generalScriptFragment"></th:block>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../javascript/event.js"></script>
+<script src="../javascript/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAErOyHT4wjq9z65fPeQzFUHjNEtjjInE&callback=initMap"
+    async defer></script>
+</body>
+</html>

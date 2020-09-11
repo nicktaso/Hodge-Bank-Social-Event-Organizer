@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home</title>
+	<th:block th:replace="fragments/metaFragment :: metaFragment"></th:block>
+	<link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+	<section th:replace="fragments/loginFragment :: loginFragment" class="bg-image"></section>
+
+	<main id="logged-in" style="display:none;">
+<header th:replace="fragments/headerFooterFragment :: headerFragment"></header>
+
+		<section id="search-section">
+			<div class="jumbotron search-jumbo">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend" id="search-bar">
+						<span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+					</div>
+					<input type="text" class="form-control" placeholder="Search Events" aria-label="search"
+						aria-describedby="basic-addon1">
+				</div>
+			</div>
+		</section>
+
+		<section id="search-results-header">
+			<section id="search-results" class="container grid-container">
+			</section>
+		</section>
+
+		<section id="events-carousel">
+		</section>
+
+		<section id="section-header">
+			<section id="filters-section">
+				<div id="filters-box" class="collapse show in">
+					<div class="jumbotron" id="filters-group">
+						<div class="filters-grid-container container" id="filters-container">
+							<button class="btn btn-filter filter-grid-item" value="">Show all</button>
+							<button class="btn btn-filter filter-grid-item" value="Beer night">Beer night</button>
+							<button class="btn btn-filter filter-grid-item" value="Darts">Darts</button>
+							<button class="btn btn-filter filter-grid-item" value="Bowling">Bowling</button>
+							<button class="btn btn-filter filter-grid-item" value="Escape room">Escape room</button>
+							<button class="btn btn-filter filter-grid-item" value="Quiz night">Quiz night</button>
+							<button class="btn btn-filter filter-grid-item" value="Snooker">Snooker</button>
+							<button class="btn btn-filter filter-grid-item" value="Table tennis">Table tennis</button>
+							<button class="btn btn-filter filter-grid-item" value="Party">Party</button>
+							<button class="btn btn-filter filter-grid-item" value="Other">Other</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="advanced-section">
+				<div id="advanced-box" class="collapse in">
+					<div class="jumbotron" id="advanced-group">
+						<div class="container row" id="advanced-container">
+							<div class="col-xs-4">
+								<div class="filter-type-container">
+								<button class="btn btn-filter-type type-grid-item" value="">Show all</button>
+								<button class="btn btn-filter-type type-grid-item" value="Individual">Individual</button>
+								<button class="btn btn-filter-type type-grid-item" value="Team">Team</button>
+							</div>
+							</div>
+							<div class="col-xs-4">
+								<div class ="sort-type-container">
+								<button class="btn btn-sorting type-grid-item" onclick="sort(this.value)" value="DateAscending">Date ascending</button>
+								<button class="btn btn-sorting type-grid-item" onclick="sort(this.value)" value="DateDescending">Date descending</button>
+								<button class="btn btn-sorting type-grid-item" onclick="sort(this.value)" value="NameAscending">Name ascending</button>
+								<button class="btn btn-sorting type-grid-item" onclick="sort(this.value)" value="NameDescending">Name descending</button>
+							</div>
+							</div>
+						</div>
+					</div>
+					</div>
+			</section>
+			<section id="all-events-section" class="container grid-container">
+
+			</section>
+		</section>
+	</main>
+	<th:block th:replace="fragments/generalScriptFragment :: generalScriptFragment"></th:block>
+	<script src="../javascript/home.js"></script>
+</body>
+
+</html>

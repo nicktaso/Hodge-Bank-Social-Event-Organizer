@@ -1,0 +1,1 @@
+DELETE FROM c1976275_HodgeDB.event_user WHERE event_user.event_id IN (SELECT events.id FROM events WHERE events.event_type = "Team") AND event_user.status = 2

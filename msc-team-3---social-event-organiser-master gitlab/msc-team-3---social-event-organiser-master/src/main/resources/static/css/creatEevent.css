@@ -1,0 +1,97 @@
+
+
+#create-event-form-container{
+    background-color: #223b47d1;
+    color: #ffcb05;
+    width: 70%;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#create-event-form-container .form-control{
+    border-radius: 0.5rem;
+    border: 1px solid #223b47
+} 
+
+.create-event-button{
+    background-color: #ffcb05 !important;
+}
+
+#create-event-form{
+    font-family: 'Lato', sans-serif !important;
+    margin: 2rem auto;
+    width: 80%;   
+}
+
+#create-event-form h3{
+    margin-top: 1rem;
+    font-family: 'Lato', sans-serif !important;
+}
+#create-event-form .input-disable {
+    pointer-events: none;
+    color: grey;
+    background-color: lightgrey !important;
+  }
+
+.form-row button{
+border: none;
+color: #223b47;
+}
+
+.error{
+	display: none;
+	margin-left: 10px;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}
+.info-field{
+    border-radius: 0.3rem;
+    border: solid rgb(172, 170, 170) 0.7px;
+    margin: 0.1rem;
+    
+}
+.contenx{
+    background-color:rgb(223, 218, 218);
+}
+
+.descField{
+    font-weight: bold;
+}
+
+
+.modal-header{
+    background-color: #223b47d1;
+    color: white;
+}
+.modal-footer{
+    background-color: #223b47d1;
+}
+.modal-body{
+    color: #545b62;
+    background-color: #ffffff !important;
+}
+
+#confirm-button{
+    border-color: #ffc107;
+    color: #ffffff;
+    background-color: #ffc107;
+}
+.modal-footer .btn-outline-secondary{
+    background-color: #8e8e8e;
+    color: #ffffff;
+}
+#confirm-button:hover{
+    background-color:  #ffffff ;
+}
+
+@media(max-width: 420px){
+    #create-event-form-container{
+        width: 90%;
+    }
+}
+
+
+

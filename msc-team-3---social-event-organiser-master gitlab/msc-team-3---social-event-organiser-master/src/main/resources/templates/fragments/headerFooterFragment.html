@@ -1,0 +1,38 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<section th:fragment="headerFragment" >
+    <nav class="navbar fixed-top navbar-expand-md navbar-light" style= "background-color: #223b47; overflow-x:hidden">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline ">
+                <ul class="navbar-nav ">
+                    <li class="nav-item" id="home-page">
+                        <a class="nav-link" href="/home" style="  font-size: 21px;"> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item " id="add-event">
+                        <a class="nav-link" href="/create-event" style="font-size: 21px;"> Add Event <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" id="calendar">
+                        <a class="nav-link" href="/calendar" style="  font-size: 21px;"> Calendar <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown" id="my-events">
+                        <a class="nav-link" href="/my-events" style="  font-size: 21px;"> My Events <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+    <div class="jumbotron logo" style="height: 150px; margin-bottom: 0;">
+        <a href="/home">
+            <img src="https://www.hodgebank.co.uk/wp-content/uploads/2018/08/hodge-bank-logo.png" alt="" style="width: 150px; margin:5px; padding-top: 10px;">
+        </a>
+    </div>
+</section>
+
+<section th:fragment="footerFragment" style= "background: #223b47; padding:2px; overflow-x:hidden;">
+
+</section>
+</html>

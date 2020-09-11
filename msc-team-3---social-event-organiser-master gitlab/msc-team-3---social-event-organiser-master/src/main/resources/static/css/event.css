@@ -1,0 +1,169 @@
+.jumbotron{
+    background-color: rgba(255, 255, 255, 0);
+}
+/* mediaQueries */
+@media (max-width: 767.98px) {
+    input.hodgeLogo{
+        padding-top: 47px !important;
+    }
+    .jumbotron img{
+        margin:25px !important;
+    }
+    div.jumbotron{
+        padding-top: 32px;
+        padding-bottom: 2px;
+        margin-bottom: -13px !important;
+    }
+    .invButtons{
+        display: none
+    }
+}
+@media (min-width: 767.98px) {
+    .invButtonsCenter{
+        display: none
+    }
+}
+
+@media (max-width: 767.98px) {
+    footer{
+        position: sticky;
+        bottom: 0;
+
+    }
+}
+@media (min-width:1000px){
+    .description{
+        min-height: 27rem;
+    }
+}
+@media (max-width:1000px){
+    .description{
+        min-height: 27rem;
+    }
+}
+@media(max-width: 767.98px){
+    .clickButtons{
+    padding-left: 58px;
+    }
+}
+
+
+
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+}
+input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+}
+input[type=text] {
+    background-color: #f1f1f1;
+    width: 100%;
+}
+input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+}
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 5%;
+    right: 5%;
+}
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+}
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+/*this does not work yet*/
+#multiple-email{
+    height: 150px;
+    width: 90%;
+    margin: 10px 5% 0 5%;
+}
+
+input.form-control{
+    border: 1px black !important;
+}
+
+input[type = "email"]{
+    border: 1px black !important;
+    background: #e3eaf1;
+    color: black;
+}
+
+.imageLayout{
+    width: 100%;
+}
+.imageLayout img{
+    object-fit: cover;
+    width:100%;
+    height:200px;
+}
+
+.centerBar{
+    background: #ffcb05;
+    padding:0px;
+}
+.centerBar button{
+    background-color: #223b47;
+    border-color: #223b47;
+    color: #ffffff;
+}
+
+.nav li{
+    font-size: 1.60rem;
+    font-weight: 600;
+}
+
+.nav a{
+    color: #223b47;
+    padding: 0rem 1rem;
+}
+.description{
+    margin: 0;
+}
+.description h3{
+    padding-left: 36px;
+    margin-top: 0.3rem;
+}
+
+.description p{
+    padding-left: 36px;
+}
+
+#map{
+    height: 20rem;
+    margin-top: 2rem;
+    border: solid #223b478f 1px;
+    border-radius: 1rem;
+    box-shadow: #223b4761 1px 1px;
+}
+@media (min-width: 1000px){
+#event-location{
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+}

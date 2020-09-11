@@ -1,0 +1,245 @@
+.jumbotron{
+    background-color: #e9ecef00;
+       margin-top: 0;
+   }
+
+.logo img{
+    padding-top: 0 !important;
+}
+.logo{
+    height: 130px !important;
+}
+.form-inline .nav-link{
+    padding: 0.2rem 1rem !important; 
+}
+body{
+    background-image: url('https://www.vox360.com/wp-content/uploads/2019/05/Website-Background-Web.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.login-box{
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    top: -88px;
+    left: calc(50% - 50px);
+}
+
+.login-box {
+    width: 320px;
+    height: 420px;
+    background: #223b47;
+    color: #ffcb05;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    margin-top: 2.5em;
+}
+
+.login-box h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;;
+    font-size: 22px;
+    color: #d9d9d9
+}
+
+.login-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type= "text"], input[type = "email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.login-box input[type = submit]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #ffcb05;
+    color: black;
+    font-size: 18px;
+}
+
+
+body{
+    background-color: #d9d9d9;
+}
+
+.crEvent:hover{
+  color: #a3a3a3;
+}
+
+.active:hover{
+  color: black;
+}
+/* Events Carousel */
+
+.swiper-full-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3em;
+    padding-right: 3em;
+
+}
+.swiper-full-container:focus, .swiper-full-container div:focus, .swiper-full-container span:focus {
+    outline: none!important;
+    color: #333333;
+}
+.swiper-pagination {
+    position: unset;
+    margin-top: 0.75rem;
+}
+.swiper-pagination-bullet {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+   background-color: #223b47
+}
+.swiper-slide {
+    height: auto;
+    align-self: auto;
+    padding: 10px
+}
+.syp-card-img-container {
+    position: relative;
+    text-align: center;
+}
+.syp-img-container-top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+ .navbar{
+    padding: 0;
+}
+.form-inline .nav-link {
+    color: #d9d9d9 !important;
+}
+
+ul .active {
+    background-color: #ffff;
+
+}
+
+ul .active .nav-link{
+    color: #17252c !important;
+}
+
+
+:root{
+    --swiper-navigation-size: 20px
+}
+
+
+/* all events grid  */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    justify-items: center;
+  }
+  .grid-item {
+      margin: 1rem;
+      width: 20rem;
+      grid-gap: 20rem;
+  }
+
+  @media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+        padding: 1rem;
+    }
+  }
+
+  @media (max-width: 573px){
+    .logo img{
+        padding: 0 !important;
+        margin-top: 25px !important;
+    }
+ 
+  }
+
+   @media (max-width: 770px) {
+    .grid-container {
+        grid-template-columns: auto;
+        margin: auto;
+
+    }
+  }
+
+  .card{
+    background-color: #223b47;
+    font-family: 'Lato', sans-serif !important;
+      color: #d9d9d9;
+      box-shadow: #17252c 0px 3px 5px ;
+      transition: transform .4s;
+  }
+  .card:hover{
+    transform: scale(1.01);
+  }
+
+  .card img{
+      height: 200px;
+      transition: transform .4s;
+      border-radius: 1rem;
+      width: 103%;
+      box-shadow: #17252c 0px 3px 5px ;
+      align-self: center;
+      margin-top: -0.5rem;
+  }
+  .card img:hover{
+    transform: scale(1.01);
+  }
+  .card-body{
+    background-color: #223b47;
+  }
+  .card-body p{
+    margin: 0;
+  }
+  .card-footer .btn{
+      border-color: #d9d9d9;
+      color: #d9d9d9;
+  }
+  .swiper-button-prev{
+     color: #223b4770;
+    font-size: 1px;
+  }
+  .swiper-button-next{
+    color: #223b4770;
+ }
+ h2{
+  text-align: center;
+  font-family: 'Lato', sans-serif !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important
+}

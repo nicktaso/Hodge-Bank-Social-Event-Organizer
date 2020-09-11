@@ -1,0 +1,44 @@
+.user-details{
+    position:absolute;
+    top: 4rem;
+    right:-0.5rem;
+    max-width: 14rem;
+    background-color: #223b47;
+    padding: 0.5rem 2rem 0rem 2rem;
+    border-radius: 0.7rem;
+    color: #d9d9d9;
+    font-size: 1.5rem;
+}
+
+.user-details span{
+    margin-right: 0.6rem;
+    
+}
+.user-details p{
+    margin-bottom: 0.6rem;
+}
+
+#upcoming-events-carousel{
+    margin-top: -3rem !important;
+}
+
+@media (max-width: 720px){
+
+    #upcoming-events-carousel{
+        margin-top: 1rem !important;
+    } 
+}
+
+@media (max-width: 420px){
+    .user-details{
+        top: 7rem
+    }
+    #upcoming-events-carousel{
+        margin-top: 5rem !important;
+    } 
+}
+
+
+
+
+
